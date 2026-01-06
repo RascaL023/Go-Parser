@@ -1,0 +1,60 @@
+{
+  "kitty": {
+    "cursor": "#AC82E9",
+    "fg": "#d8cab8",
+    "bg": "#000000",
+    "selectBg": "#b86fd4",
+    "selectFg": "#141216",
+    "opacity": "0.7",
+
+    "color0": "#2b2135",
+    "color1": "#fc4649",
+    "color2": "#c4e881",
+    "color3": "#AC82E9",
+    "color4": "#7b91fc",
+    "color5": "#f3fc7b",
+    "color6": "#8F56E1",
+    "color7": "#fc92fc",
+    "color8": "#92fcfa",
+    "color9": "#fc4649",
+    "color10": "#c4e881",
+    "color11": "#AC82E9",
+    "color12": "#7b91fc",
+    "color13": "#f3fc7b",
+    "color14": "#8F56E1",
+    "color15": "#d8cab8"
+  },
+  "cava": {
+    "gradient4": "#DA70D6",
+    "gradient5": "#D8BFD9",
+    "gradient2": "#8A2BE2",
+    "gradient3": "#BA55D3",
+    "gradient1": "#4B0082"
+  },
+  "hyprland": {
+    "accent": "#ca1fdaff",
+    "accentAlpha": "#390b3bff",
+    "primaryFont": "Maple Mono NF",
+    "secondaryFont": "Maple Mono NF",
+
+    "gapsIn": 1,
+    "gapsOut": 5,
+    "borderSize": 2,
+    "colActiveBorder1": "rgba(8f00ffee)",
+    "colActiveBorder2": "rgba(33ccffee)",
+    "colActiveBorderDeg": "45deg",
+    "colInactiveBorder": "rgba(0,0,0,0.7)",
+
+    "blur": true,
+    "blurSize": 4,
+    "blurPasses": 3,
+    "rounding": 0,
+    "shadow": false,
+    "shadowRange": 6,
+    "shadowRenderPower": 1,
+    "shadowColor": "rgba(0,255,255,0.4)",
+
+    "footOpacity": 0.8
+  }
+}
+
