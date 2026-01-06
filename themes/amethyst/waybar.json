@@ -1,0 +1,77 @@
+{
+  "waybar": {
+    "mine": {
+      "waybarBg": "rgba(0,0,0,0)",
+      "waybarFg": "#E7D7FF",
+
+      "modulesBg": "rgba(55, 35, 80, 0.65)",
+      "tooltipBg": "rgba(45, 30, 70, 0.92)",
+
+      "moduleHoverFg": "#A43ddd",
+
+      "workspacesBtn": "#A45EE5",
+      "workspacesActiveBg": "#A45EE5",
+      "workspacesActiveFg": "#A45EE5",
+
+      "accent1": "#A200FF",
+      "accent2": "#C770FA",
+      "borderColor": "#A45EE5"
+    },
+    "mechabox": {
+      "Rosewater": "#f2e6ff",
+      "Flamingo": "#e6ccff",
+      "Pink": "#d9b3ff",
+      "Mauve": "#c299ff",
+      "Red": "#b366ff",
+      "Maroon": "#9933ff",
+      "Peach": "#bf80ff",
+      "Yellow": "#cc99ff",
+      "Green": "#aa88ff",
+      "Teal": "#9570ff",
+      "Sky": "#8c66ff",
+      "Sapphire": "#8056ff",
+      "Blue": "#734cff",
+      "Lavender": "#b380ff",
+
+      "Text": "#e0d6f7",
+      "Subtext1": "#cbbde6",
+      "Subtext0": "#b3a3d6",
+
+      "Overlay2": "#9c8cc2",
+      "Overlay1": "#8575ad",
+      "Overlay0": "#6e5f99",
+
+      "Surface2": "#594d80",
+      "Surface1": "#443966",
+      "Surface0": "#33294d",
+
+      "Base": "#221933",
+      "Mantle": "#1a1226",
+      "Crust": "#120d1a",
+
+      "MainBr": "@subtext0",
+      "MainBg": "@crust",
+      "MainFg": "@text",
+
+      "Accent": "@mauve",
+      "HoverBg": "alpha(@mauve, 0.15)",
+      "HoverFg": "@lavender",
+      "Outline": "alpha(@lavender, 0.5)",
+
+      "Workspaces": "@mantle",
+      "Temperature": "@mantle",
+      "Memory": "@base",
+      "Cpu": "@surface0",
+      "Time": "@surface0",
+      "Date": "@base",
+      "Tray": "@mantle",
+      "Volume": "@mantle",
+      "Backlight": "@base",
+      "Battery": "@surface0",
+
+      "Warning": "#ff80ff",
+      "Critical": "#cc33ff",
+      "Charging": "#aa66ff"
+    }
+  }
+}
