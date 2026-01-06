@@ -1,0 +1,3 @@
+kitty$assets/templates/kitty/kitty.conf.tmpl$output/kitty/kitty.conf
+hypr$assets/templates/hypr/hyprland.conf.tmpl$output/hypr/hyprland.conf
+cava$assets/templates/cava/cava.tmpl$output/cava/cava_extra

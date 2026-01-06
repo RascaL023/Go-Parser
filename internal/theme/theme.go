@@ -6,3 +6,6 @@ type Theme struct {
 	Hyprland Hyprland `json:"hyprland"`
 }
 
+type Renderer interface {
+	Render(templatePath, outputPath string) error
+}
