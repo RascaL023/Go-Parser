@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
+	"parsertry/internal/state"
 	"parsertry/internal/theme"
 	"parsertry/internal/waybar"
 )
@@ -34,4 +35,14 @@ func LoadWaybar(path string) (*waybar.Waybar, error) {
 	}
 
 	return &t, nil
+}
+
+func LoadState(path string) (*state.State, error){
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var s state.State
+	return &s, json.Unmarshal(data, &s)
 }

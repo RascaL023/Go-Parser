@@ -24,5 +24,12 @@ Future Plans:
 - Template-based renderer (Mustache / Go template)
 - Documentation & examples
 
+Error statuses:
+- 0 => Success
+- 1 => Runtime/IO/render Error
+- 2 => config/paths.txt Error
+- 3 => unknown Error
+- 4 => template Error
+- 5 => active tools
 
 Last Update: Add waybar, improving structure, update README.md

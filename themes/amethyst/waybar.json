@@ -1,21 +1,21 @@
 {
   "waybar": {
     "mine": {
-      "waybarBg": "rgba(0,0,0,0)",
-      "waybarFg": "#E7D7FF",
+      "WaybarBg": "rgba(0,0,0,0)",
+      "WaybarFg": "#E7D7FF",
 
-      "modulesBg": "rgba(55, 35, 80, 0.65)",
-      "tooltipBg": "rgba(45, 30, 70, 0.92)",
+      "ModulesBg": "rgba(55, 35, 80, 0.65)",
+      "TooltipBg": "rgba(45, 30, 70, 0.92)",
 
-      "moduleHoverFg": "#A43ddd",
+      "ModuleHoverFg": "#A43ddd",
 
-      "workspacesBtn": "#A45EE5",
-      "workspacesActiveBg": "#A45EE5",
-      "workspacesActiveFg": "#A45EE5",
+      "WorkspacesBtn": "#A45EE5",
+      "WorkspacesActiveBg": "#A45EE5",
+      "WorkspacesActiveFg": "#A45EE5",
 
-      "accent1": "#A200FF",
-      "accent2": "#C770FA",
-      "borderColor": "#A45EE5"
+      "Accent1": "#A200FF",
+      "Accent2": "#C770FA",
+      "BorderColor": "#A45EE5"
     },
     "mechabox": {
       "Rosewater": "#f2e6ff",

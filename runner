@@ -7,16 +7,18 @@
 # Paths
 BINARY="bin/renderer"
 SRC="./cmd/renderer"
+OPTION=$2
+NAME=$3
 
 # Function: print usage
 usage() {
     echo "Usage: $0 [option]"
     echo "Options:"
-    echo "  build       -> Build binary"
-    echo "  run         -> Build + run binary"
-    echo "  run-bin     -> Run binary only"
-    echo "  go-run      -> Run without build"
-    echo "  clean       -> Remove binary"    
+    echo "  build   [theme|waybar]    -> Build binary"
+    echo "  run     [theme|waybar]    -> Build + run binary"
+    echo "  run-bin [theme|waybar]    -> Run binary only"
+    echo "  go-run  [theme|waybar]    -> Run without build"
+    echo "  clean   [theme|waybar]    -> Remove binary"    
     exit 1
 }
 
@@ -38,11 +40,11 @@ case "$1" in
         echo "[+] Building binary..."
         go build -o "$BINARY" "$SRC"
         echo "[+] Running binary..."
-        "./$BINARY"
+        "./$BINARY" "$OPTION" "$NAME"
         ;;
     go-run)
         echo "[+] Running without build..."
-        go run "$SRC"
+        go run "$SRC" "$OPTION" "$NAME"
         ;;
     clean)
         echo "[+] Removing binary..."
@@ -50,7 +52,12 @@ case "$1" in
         ;;
     run-bin)
         echo "[+] Running binary..."
-        ./bin/renderer
+        "./$BINARY" "$OPTION" "$NAME"
+        ;;
+    waybar-run)
+        echo "[+] Running waybar without build..."
+        OPTION="waybar"
+        go run "$SRC" "$OPTION" "$NAME"
         ;;
     *)
         usage
