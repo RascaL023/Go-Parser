@@ -19,6 +19,13 @@ Supported Tools:
 - Foot
 - Wlogout
 
+Planned Tools:
+- Eww
+- Micro
+- Swaync
+- Rofi
+- Nvim
+
 Future Plans:
 - Hot-reload support
 - Theme validation & schema checking
