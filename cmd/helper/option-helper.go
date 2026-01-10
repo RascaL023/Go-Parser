@@ -35,6 +35,7 @@ func RunTheme(name string) int {
 			Waybar: wb,
 			Preset: state.Waybar,
 		},
+		"foot": &t.Foot,
 	}
 
 	file, err := os.Open("assets/templates/paths.txt")

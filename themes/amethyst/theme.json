@@ -55,6 +55,28 @@
     "shadowColor": "rgba(0,255,255,0.4)",
 
     "footOpacity": 0.8
+  },
+  "foot": {
+    "foreground": "ffffff", 
+    "background": "000000",
+
+    "regular0": "2b2135",  
+    "regular1": "fc4649",  
+    "regular2": "c4e881",  
+    "regular3": "AC82E9",  
+    "regular4": "7b91fc",  
+    "regular5": "f3fc7b",  
+    "regular6": "8F56E1",  
+    "regular7": "fc92fc",  
+
+    "bright0": "92fcfa",
+    "bright1": "fc4649",
+    "bright2": "c4e881",
+    "bright3": "AC82E9",
+    "bright4": "7b91fc",
+    "bright5": "f3fc7b",
+    "bright6": "8F56E1",
+    "bright7": "d8cab8"
   }
 }
 

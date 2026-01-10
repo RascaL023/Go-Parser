@@ -1,4 +1,5 @@
-waybar$assets/templates/waybar/mine.tmpl$output/waybar/sources.css
+waybar$assets/templates/waybar/mechabox.tmpl$output/waybar/sources.css
 kitty$assets/templates/kitty/kitty.tmpl$output/kitty/kitty.conf
 hypr$assets/templates/hypr/hyprland.tmpl$output/hypr/hyprland.conf
 cava$assets/templates/cava/cava.tmpl$output/cava/cava_extra
+foot$assets/templates/foot/foot.tmpl$output/foot/colors.ini

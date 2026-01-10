@@ -30,6 +30,6 @@ Error statuses:
 - 2 => config/paths.txt Error
 - 3 => unknown Error
 - 4 => template Error
-- 5 => active tools
 
-Last Update: Add waybar, improving structure, update README.md
+Pending: Dynamic path for waybar
+Last Update: Add foot, improving structure
