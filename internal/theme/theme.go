@@ -5,6 +5,7 @@ type Theme struct {
 	Cava Cava `json:"cava"`
 	Hyprland Hyprland `json:"hyprland"`
 	Foot Foot `json:"foot"`
+	Wlogout Wlogout `json:"wlogout"`
 }
 
 type Renderer interface {

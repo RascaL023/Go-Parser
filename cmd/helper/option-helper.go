@@ -36,6 +36,7 @@ func RunTheme(name string) int {
 			Preset: state.Waybar,
 		},
 		"foot": &t.Foot,
+		"wlogout": &t.Wlogout,
 	}
 
 	file, err := os.Open("assets/templates/paths.txt")

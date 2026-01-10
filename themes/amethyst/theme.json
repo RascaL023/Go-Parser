@@ -77,6 +77,12 @@
     "bright5": "f3fc7b",
     "bright6": "8F56E1",
     "bright7": "d8cab8"
+  },
+  "wlogout": {
+    "window-bg": "rgba(10, 10, 24, 0.8)",
+    "button-bg": "rgba(0, 0, 0, 0.6)",
+    "button-focus-bg": "#BB86FC",
+    "button-focus-border": "#BB86FC"
   }
 }
 

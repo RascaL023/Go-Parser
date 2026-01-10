@@ -17,6 +17,7 @@ Supported Tools:
 - Cava
 - Waybar (in progress)
 - Foot
+- Wlogout
 
 Future Plans:
 - Hot-reload support
