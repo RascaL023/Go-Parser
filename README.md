@@ -11,11 +11,12 @@ Features:
 - Deterministic output (same input → same config)
 - Minimal runtime dependency
 
-Supported / Planned Tools:
+Supported Tools:
 - Hyprland
 - Kitty
 - Cava
 - Waybar (in progress)
+- Foot
 
 Future Plans:
 - Hot-reload support
@@ -31,5 +32,5 @@ Error statuses:
 - 3 => unknown Error
 - 4 => template Error
 
-Pending: Dynamic path for waybar
-Last Update: Add foot, improving structure
+Pending     : Dynamic path for waybar
+Last Update : Add foot, improving structure
