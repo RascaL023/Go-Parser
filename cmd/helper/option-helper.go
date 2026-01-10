@@ -11,6 +11,32 @@ import (
 	"parsertry/internal/theme"
 )
 
+func expandPath(path string) (string, error) {
+	if strings.HasPrefix(path, "~") {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return "", err
+		}
+		return filepath.Join(home, strings.TrimPrefix(path, "~")), nil
+	}
+	return path, nil
+}
+
+func prepareOutput(path string) (string, error) {
+	out, err := expandPath(path)
+	if err != nil {
+		return "", err
+	}
+
+	// pastikan folder-nya ada
+	dir := filepath.Dir(out)
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		return "", err
+	}
+
+	return out, nil
+}
+
 func RunTheme(name string) int {
 	t, err := renderer.LoadTheme(filepath.Join("themes", name, "theme.json"))
 	if err != nil {
@@ -66,7 +92,12 @@ func RunTheme(name string) int {
 			return Fatal(fmt.Errorf("unknown renderer: %s", tool), 2)
 		}
 
-		if err := r.Render(templatePath, outputPath); err != nil {
+		outPath, err := prepareOutput(outputPath)
+		if err != nil {
+			return Fatal(err, 1)
+		}
+
+		if err := r.Render(templatePath, outPath); err != nil {
 			return Fatal(err, 1)
 		}
 	}

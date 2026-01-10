@@ -40,5 +40,6 @@ Error statuses:
 - 3 => unknown Error
 - 4 => template Error
 
+
 Pending     : Dynamic path for waybar
-Last Update : Add foot, improving structure
+Last Update : Add wlogout, expanded path to /home folder
