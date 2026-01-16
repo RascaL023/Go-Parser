@@ -4,3 +4,4 @@ hypr$assets/templates/hypr/hyprland.tmpl$output/hypr/hyprland.conf
 cava$assets/templates/cava/cava.tmpl$output/cava/cava_extra
 foot$assets/templates/foot/foot.tmpl$output/foot/colors.ini
 wlogout$assets/templates/wlogout/wlogout.tmpl$output/wlogout/source.css
+
