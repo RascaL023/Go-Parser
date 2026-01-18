@@ -1,6 +1,6 @@
 # Go Parser
 
-## Description:
+## Description
 Parse JSON-based theme definition into multiple tools configuration using SSOT (Single Source of Truth) approach.
 
 ### Features:
@@ -15,6 +15,8 @@ Parse JSON-based theme definition into multiple tools configuration using SSOT (
 - Cava
 - Waybar (in progress)
 - Wlogout
+- Hyprland
+- Kitty
 
 ### Planned Tools:
 - Eww
@@ -30,5 +32,5 @@ Parse JSON-based theme definition into multiple tools configuration using SSOT (
 - Template-based renderer (Mustache / Go template)
 - Documentation & examples
 
-#### Pending     : Add all main branch tools
-#### Last Update : Dynamic path with state.json
+#### Pending     : Waybar single renderer
+#### Last Update : Catching main branch

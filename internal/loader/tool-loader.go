@@ -3,16 +3,16 @@ package loader
 import (
 	"encoding/json"
 	"os"
-	"parsertry/internal/tools"
+	"parsertry/internal/tools/common"
 )
 
-func LoadToolFromTheme(path string) (*tools.Tool, error) {
+func LoadToolFromTheme(path string) (*common.Tool, error) {
 	raw, err := os.ReadFile(path);
 	if err != nil {
 		return nil, err;
 	}
 
-	var t tools.Tool;
+	var t common.Tool;
 	if err := json.Unmarshal(raw, &t); err != nil {
 		return nil, err;
 	}
