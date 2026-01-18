@@ -1,36 +1,84 @@
 #!/usr/bin/env bash
 
+# ==================================== #
+# |  Wrapper script...               | #
+# ==================================== #
+
+# Settings
+QUIET=0
+if ! [[ -t 1 ]]; then
+  QUIET=1
+else
+  clear
+fi
+[[ -n "$VERBOSE" ]] && QUIET=0
+
+log() {
+  [[ $QUIET -eq 0 ]] && echo "$@"
+}
+
+error() {
+  echo "Error: $@" >&2
+  notify-send -t 3000 "Error!" "$@"
+}
+
+
+# Path
 BINARY="./cmd/bin/parser"
 SRC="./cmd/parser"
+
+# Args
 mode=$1
 opt=$2
 
-clear
+
+usage() {
+  log "Usage: $0 [mode] [theme|waybar]"
+  log "Mode:"
+  log "  run-bin   -> Run binary only"
+  log "  run-raw   -> Run with go"
+  log "  build-bin -> Build binary"
+  log "  build-run -> Build and run binary"
+  log "  clean     -> Delete binary"
+
+  error "script error ecounter!"
+  exit 1
+}
+
+if [ $# -eq 0 ]; then
+  usage
+fi
 
 case "$mode" in
   run-bin)
-    echo "> Running.."
+    log "[❯] Running.."
     "$BINARY" "$opt"
-    echo "> Done."
+    log "[❯] Done."
     ;;  
   run-raw)
-    echo "> Running.."
+    log "[❯] Running.."
     go run "$SRC" "$opt"
-    echo "> Done."
+    log "[❯] Done."
     ;;  
   build-bin)
-    echo "> Building..."
+    log "[❯] Building..."
     go build -o "$BINARY" "$SRC"
-    echo "> Done."
+    log "[❯] Done."
     ;;  
   build-run)
-    echo "> Building..."
+    log "[❯] Building..."
     go build -o "$BINARY" "$SRC"
-    echo "> Running binary"
+    log "[❯] Running binary"
     "./$BINARY" "$opt"
-    echo "> Done."
+    log "[❯] Done."
+    ;;
+  clean)
+    log "[❯] Cleaning binary..."
+    rm -f "$BINARY"
+    log "[❯] Done."
     ;;
   *)
-    echo "Invalid mode!"
+    log "[!] Invalid mode!"
+    usage
     ;;
 esac

@@ -33,4 +33,4 @@ Parse JSON-based theme definition into multiple tools configuration using SSOT (
 - Documentation & examples
 
 #### Pending     : Waybar single renderer
-#### Last Update : Catching main branch
+#### Last Update : Improving wrapper script
