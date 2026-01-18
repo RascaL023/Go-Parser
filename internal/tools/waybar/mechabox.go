@@ -56,4 +56,3 @@ type Mechabox struct {
     Critical  string `json:"critical"`
     Charging  string `json:"charging"`
 }
-

@@ -1,6 +1,7 @@
 package state
 
 type State struct {
-	Theme string `json:"Theme"`
-	Waybar string `json:"waybar"`
+	Version int 	 `json:"version"`
+	Theme		string `json:"theme"`
+	Waybar  string `json:"waybar"`
 }

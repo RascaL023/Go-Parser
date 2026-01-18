@@ -1,6 +1,6 @@
 {
   "waybar": {
-    "mine": {
+    "spacer": {
       "WaybarBg": "rgba(0,0,0,0)",
       "WaybarFg": "#E7D7FF",
 
@@ -75,3 +75,4 @@
     }
   }
 }
+
