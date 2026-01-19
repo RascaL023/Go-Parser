@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"parsertry/internal/loader"
 	"parsertry/internal/tools/common"
 	"path/filepath"
 )
 
 func main() {
-	assetsMap := "assets/map";
-	state, err := loader.LoadState(assetsMap + "/state.json");
+	assetsMap := os.ExpandEnv("$MYENV/map");
+	state, err := loader.LoadState(assetsMap + "/.state.json");
 	if err != nil {
 		panic("Error on parsing state!");
 	}
@@ -21,7 +22,7 @@ func main() {
 	}
 
 
-	themeName 	 := state.Theme;
+	themeName 	 := state.Theme.Name;
 	theme, err := loader.LoadToolFromTheme(filepath.Join("themes", themeName, "theme.json"));
 	if err != nil {
 		panic(fmt.Sprintf("Theme %s not found!", themeName));

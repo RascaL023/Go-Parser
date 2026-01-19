@@ -7,14 +7,13 @@ import (
 )
 
 func parseKeyword(keyword string, state *state.State) string {
-	res := "";
+	res := strings.ToUpper(keyword);
 
-	switch strings.ToUpper(keyword) {
+	switch res {
 		case "WAYBAR" : res = state.Waybar;
-		case "THEME"  : res = state.Theme;
+		case "THEME"  : res = state.Theme.Name;
 		default: 
-			res = os.Getenv(strings.ToUpper(keyword));
-			if res == "" {
+			if res = os.Getenv(res); res == "" {
 				res = "$" + keyword;
 			}
 	}

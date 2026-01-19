@@ -34,4 +34,4 @@ Parse JSON-based theme definition into multiple tools configuration using SSOT (
 - SSOT color
 
 #### Pending     : Waybar single renderer
-#### Last Update : Improving wrapper script
+#### Last Update : Expanding map folder, Improving wrapper script

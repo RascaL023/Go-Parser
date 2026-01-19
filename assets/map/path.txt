@@ -1,6 +1,0 @@
-waybar|assets/templates/waybar/$WAYBAR.tmpl|output/waybar/sources.css
-wlogout|assets/templates/wlogout/wlogout.tmpl|output/wlogout/source.css
-cava|assets/templates/cava/cava.tmpl|output/cava/cava_extra
-kitty|assets/templates/kitty/kitty.tmpl|output/kitty/kitty.conf
-hypr|assets/templates/hypr/hyprland.tmpl|output/hypr/hyprland.conf
-foot|assets/templates/foot/foot.tmpl|output/foot/colors.ini
