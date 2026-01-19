@@ -31,6 +31,7 @@ SRC="./cmd/parser"
 mode=$1
 opt=$2
 
+mkdir -p "./cmd/bin"
 
 usage() {
   log "Usage: $0 [mode] [theme|waybar]"
@@ -82,3 +83,5 @@ case "$mode" in
     usage
     ;;
 esac
+
+exit 0

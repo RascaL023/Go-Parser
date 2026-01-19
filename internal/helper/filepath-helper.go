@@ -10,9 +10,13 @@ func parseKeyword(keyword string, state *state.State) string {
 	res := "";
 
 	switch strings.ToUpper(keyword) {
-		case "HOME"		: res = os.Getenv("HOME");
 		case "WAYBAR" : res = state.Waybar;
 		case "THEME"  : res = state.Theme;
+		default: 
+			res = os.Getenv(strings.ToUpper(keyword));
+			if res == "" {
+				res = "$" + keyword;
+			}
 	}
 	
 	return res;

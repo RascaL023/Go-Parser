@@ -31,6 +31,7 @@ Parse JSON-based theme definition into multiple tools configuration using SSOT (
 - CLI flags for selective rendering
 - Template-based renderer (Mustache / Go template)
 - Documentation & examples
+- SSOT color
 
 #### Pending     : Waybar single renderer
 #### Last Update : Improving wrapper script
