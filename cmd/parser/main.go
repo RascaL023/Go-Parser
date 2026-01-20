@@ -5,36 +5,48 @@ import (
 	"os"
 	"parsertry/internal/loader"
 	"parsertry/internal/tools/common"
+	"parsertry/internal/tools/common/kitty"
 	"path/filepath"
 )
 
 func main() {
+	// Get the name of theme
 	assetsMap := os.ExpandEnv("$MYENV/map");
 	state, err := loader.LoadState(assetsMap + "/.state.json");
 	if err != nil {
 		panic("Error on parsing state!");
 	}
-	fmt.Println("[+] Using state", state.Version);
+	fmt.Println("[Go] Using state", state.Version);
 
+
+	// Get the input - output path of each tools
 	tools, err := loader.LoadToolMap(assetsMap + "/path.txt", state);
 	if err != nil {
 		panic("Error on parsing map path!");
 	}
 
 
+	// Get all the config of each tools from theme.json(not the rendered one!)
 	themeName 	 := state.Theme.Name;
 	theme, err := loader.LoadToolFromTheme(filepath.Join("themes", themeName, "theme.json"));
 	if err != nil {
-		panic(fmt.Sprintf("Theme %s not found!", themeName));
+		panic(fmt.Sprintf("[Go] Theme %s not found!", themeName));
 	}
 
+
+	// Get the waybar json by the theme
 	waybar, err := loader.LoadWaybar(filepath.Join("themes", themeName, "waybar.json"));
 	if err != nil {
 		panic(fmt.Sprintf("Waybar Preset %s error!", themeName));
 	}
 
+	// Build here!
+	var renderTool common.RenderTool;
+	renderTool.Kitty = kitty.BuildKitty(theme.Kitty);
+	
 
-	registerTools := common.RegisterTool(*theme, *state, waybar);
+	// Render the tools
+	registerTools := common.RegisterTool(renderTool , *state, waybar);
 	for _, tool := range tools {
 		reg, ok := registerTools[tool.Name];
 		if !ok {
