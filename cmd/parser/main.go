@@ -4,15 +4,17 @@ import (
 	"fmt"
 	"os"
 	"parsertry/internal/loader"
+	"parsertry/internal/state"
 	"parsertry/internal/tools/common"
 	"parsertry/internal/tools/common/kitty"
+	"parsertry/internal/tools/waybar"
 	"path/filepath"
 )
 
 func main() {
-	// Get the name of theme
+	// Get the state of theme
 	assetsMap := os.ExpandEnv("$MYENV/map");
-	state, err := loader.LoadState(assetsMap + "/.state.json");
+	state, err := loader.LoadJSON[state.State](assetsMap + "/.state.json");
 	if err != nil {
 		panic("Error on parsing state!");
 	}
@@ -28,14 +30,14 @@ func main() {
 
 	// Get all the config of each tools from theme.json(not the rendered one!)
 	themeName 	 := state.Theme.Name;
-	theme, err := loader.LoadToolFromTheme(filepath.Join("themes", themeName, "theme.json"));
+	theme, err := loader.LoadJSON[common.Tool](filepath.Join("themes", themeName, "theme.json"));
 	if err != nil {
 		panic(fmt.Sprintf("[Go] Theme %s not found!", themeName));
 	}
 
 
 	// Get the waybar json by the theme
-	waybar, err := loader.LoadWaybar(filepath.Join("themes", themeName, "waybar.json"));
+	waybar, err := loader.LoadJSON[waybar.Waybar](filepath.Join("themes", themeName, "waybar.json"));
 	if err != nil {
 		panic(fmt.Sprintf("Waybar Preset %s error!", themeName));
 	}
@@ -53,6 +55,7 @@ func main() {
 			fmt.Println("Unknown tool:", tool.Name);
 			continue;
 		}
+		fmt.Println("Rendering", tool.Name);
 
 		if err := reg.Render(tool.TemplatePath, tool.OutputPath); err != nil {
 			panic(err);

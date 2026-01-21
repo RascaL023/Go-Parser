@@ -35,8 +35,8 @@ func LoadToolMap(path string, state *state.State) ([]ToolMap, error) {
 		}
 
 		res = append(res, ToolMap{
-			Name: 				parts[0],
-			TemplatePath: parts[1],
+			Name: 			parts[0],
+			TemplatePath: 	parts[1],
 			OutputPath: 	parts[2],
 		});
 	}
