@@ -1,25 +1,27 @@
-foreground {{ .Fg }}
-background {{ .Bg }}
+foreground {{ .Foreground }}
+background {{ .Background }}
 cursor {{ .Cursor }}
 
-selection_background {{ .SelectBg }}
-selection_foreground {{ .SelectFg }}
+selection_background {{ .SelectBackground }}
+selection_foreground {{ .SelectForeground }}
 
 background_opacity {{ .Opacity }}
 
-color0  {{ .Color0 }}
-color1  {{ .Color1 }}
-color2  {{ .Color2 }}
-color3  {{ .Color3 }}
-color4  {{ .Color4 }}
-color5  {{ .Color5 }}
-color6  {{ .Color6 }}
-color7  {{ .Color7 }}
-color8  {{ .Color8 }}
-color9  {{ .Color9 }}
-color10 {{ .Color10 }}
-color11 {{ .Color11 }}
-color12 {{ .Color12 }}
-color13 {{ .Color13 }}
-color14 {{ .Color14 }}
-color15 {{ .Color15 }}
+color0={{ index .Regular 0 }}
+color1={{ index .Regular 1 }}
+color2={{ index .Regular 2 }}
+color3={{ index .Regular 3 }}
+color4={{ index .Regular 4 }}
+color5={{ index .Regular 5 }}
+color6={{ index .Regular 6 }}
+color7={{ index .Regular 7 }}
+
+color8={{ index .Bright 0 }}
+color9={{ index .Bright 1 }}
+color10={{ index .Bright 2 }}
+color11={{ index .Bright 3 }}
+color12={{ index .Bright 4 }}
+color13={{ index .Bright 5 }}
+color14={{ index .Bright 6 }}
+color15={{ index .Bright 7 }}
+

@@ -4,34 +4,35 @@
     "background": "#000000",
 
     "cursor": "#AC82E9",
-    "opacity": "0.7",
+    "opacity": 0.7,
 
     "selection": {
-      "foreground": "#141216"
-      "background": "#b86fd4",
+      "foreground": "#141216",
+      "background": "#b86fd4"
     },
 
    "palette": {
-    "normal": [
-      "#2b2135",
-      "#fc4649",
-      "#c4e881",
-      "#AC82E9",
-      "#7b91fc",
-      "#f3fc7b",
-      "#8F56E1",
-      "#fc92fc" 
-    ],
-    "bright": [
-      "#92fcfa",
-      "#fc4649",
-      "#c4e881",
-      "#AC82E9",
-      "#7b91fc",
-      "#f3fc7b",
-      "#8F56E1",
-      "#d8cab8" 
-    ]
+      "normal": [
+        "#2b2135",
+        "#fc4649",
+        "#c4e881",
+        "#AC82E9",
+        "#7b91fc",
+        "#f3fc7b",
+        "#8F56E1",
+        "#fc92fc" 
+      ],
+      "bright": [
+        "#92fcfa",
+        "#fc4649",
+        "#c4e881",
+        "#AC82E9",
+        "#7b91fc",
+        "#f3fc7b",
+        "#8F56E1",
+        "#d8cab8" 
+      ]
+    }
   },
 
   "cava": {
@@ -48,8 +49,8 @@
     "hyprlock": {
       "primaryFont": "Maple Mono NF",
       "accent": "#ca1fdaff",
-      "accentAlpha": "#390b3bff",
-    }
+      "accentAlpha": "#390b3bff"
+    },
 
     "general": {
       "gapsIn": 1,
@@ -66,7 +67,7 @@
         },
         "inactive": "rgba(0,0,0,0.7)" 
       }
-    }
+    },
     
     "decoration": {
       "blur": {
@@ -79,7 +80,7 @@
         "enabled": false,
         "range": 6,
         "renderPower": 1,
-        "color": "rgba(0,255,255,0.4)",
+        "color": "rgba(0,255,255,0.4)"
       }
     },
 
@@ -94,6 +95,7 @@
     "window": {
       "background": "rgba(10, 10, 24, 0.8)"  
     },
+
     "button": {
       "background": "rgba(0, 0, 0, 0.6)",
       "focus": {
