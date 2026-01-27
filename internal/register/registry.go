@@ -1,21 +1,38 @@
 package register
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"parsertry/internal/context"
+)
 
-var Registered = map[string]Processor{}
+var RegisteredTool = map[string]Tool{}
 
-type Processor interface {
+type Parser interface {
+	Parse(json.RawMessage) (any, error)
+}
+
+type Resolver interface {
+	Resolve(any, *context.Context) (any, error)
+}
+
+type Renderer interface {
+	Render(templatePath, outputPath string, data any) error
+}
+
+type Tool interface {
     Name() string
-		Parse(json.RawMessage) (any, error)
-    Resolve(input any) (any, error)
-    Render(templatePath, outputPath string, data any) error
+		Parser
+		Resolver
+		// Renderer
 }
 
-func Register(p Processor) {
-    Registered[p.Name()] = p;
+func RegisterTool(t Tool) {
+    RegisteredTool[t.Name()] = t;
 }
 
-func Get(name string) (Processor, bool) {
-    p, ok := Registered[name];
+func Get(name string) (Tool, bool) {
+    p, ok := RegisteredTool[name];
     return p, ok;
 }
+
+

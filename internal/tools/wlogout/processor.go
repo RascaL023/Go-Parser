@@ -2,6 +2,7 @@ package wlogout
 
 import (
 	"encoding/json"
+	"parsertry/internal/context"
 	"parsertry/internal/register"
 	"parsertry/internal/renderer"
 )
@@ -10,7 +11,7 @@ type WlogoutProcessor struct {}
 
 func (WlogoutProcessor) Name() string { return "wlogout"; }
 
-func (WlogoutProcessor) Resolve(input any) (any, error) {
+func (WlogoutProcessor) Resolve(input any, _ *context.Context) (any, error) {
 	wlogout := input.(WlogoutInput);
 	return resolve(wlogout);
 }
@@ -25,4 +26,4 @@ func (WlogoutProcessor) Render(inputPath, outputPath string, data any) error {
 	return renderer.Render(inputPath, outputPath, data);
 }
 
-func init() { register.Register(WlogoutProcessor{}); }
+func init() { register.RegisterTool(WlogoutProcessor{}); }

@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+	"parsertry/internal/context"
+	"parsertry/internal/domain/terminal"
 	"parsertry/internal/loader"
 	"parsertry/internal/register"
 
@@ -36,6 +38,17 @@ func main() {
 		fmt.Println(err);
 	}
 
+	// ================================ Domain ================================
+	rawTerminal := theme.Theme["terminal"];
+	var terminalProc terminal.TerminalProcessor;
+
+	parsedTerminal, _ := terminalProc.Parse(rawTerminal);
+		resolvedTerminal, _ := terminalProc.Resolve(parsedTerminal);
+
+	ctx := &context.Context{
+		Terminal: resolvedTerminal,
+	}
+	// ================================ Domain ================================
 
 	for toolName, raw := range theme.Theme {
 		processor, ok := register.Get(toolName);
@@ -55,8 +68,11 @@ func main() {
 			panic(err);
 		}
 
-		resolved, err := processor.Resolve(parsed);
+		resolved, err := processor.Resolve(parsed, ctx);
 
-		processor.Render(toolPath.TemplatePath, toolPath.OutputPath, resolved);
+		// processor.Render(toolPath.TemplatePath, toolPath.OutputPath, resolved);
+		if r, ok := processor.(register.Renderer); ok {
+			r.Render(toolPath.TemplatePath, toolPath.OutputPath, resolved);
+		}
 	}
 }
