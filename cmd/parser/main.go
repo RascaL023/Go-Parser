@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"os"
 	"parsertry/internal/loader"
-	"parsertry/internal/models/input"
-	"parsertry/internal/models/output"
-	"parsertry/internal/models/register"
-	"parsertry/internal/models/resolver"
+	"parsertry/internal/register"
+
 	"parsertry/internal/state"
+	"parsertry/internal/theme"
 	"path/filepath"
 )
 
@@ -30,33 +29,34 @@ func main() {
 	}
 	// ================================ FIX ================================
 
-
-	// Get all the config of each tools from theme.json(not the rendered one!)
-	themeName 	 := state.Theme.Name;
-	theme, err := loader.LoadJSON[input.ThemeInput](filepath.Join("themes", themeName, "theme.json"));
+	theme, err := loader.LoadJSON[theme.Theme](
+		filepath.Join("themes", state.Theme.Name, "theme.json"),
+	);
 	if err != nil {
-		panic(fmt.Sprintf("[Go] Theme %s not found!", themeName));
+		fmt.Println(err);
 	}
 
-	
-	resolved := resolver.ResolveTerminal(theme.Terminal);
-	foot := resolver.ResolveFoot(resolved);
-	kitty := resolver.ResolveKitty(resolved, theme.Terminal);
-	toRegistered := output.ThemeOutput{
-		Foot: foot,
-		Kitty: kitty,
-	}
 
-	registeredTools := register.RegisterTool(toRegistered);
-	for _, tool := range tools {
-		reg, ok := registeredTools[tool.Name];
+	for toolName, raw := range theme.Theme {
+		processor, ok := register.Get(toolName);
 		if !ok {
-			fmt.Println("Unknown tool:", tool.Name);
+			fmt.Printf("Unknown %s!\n", toolName);
 			continue;
 		}
 
-		if err := reg.Render(tool.TemplatePath, tool.OutputPath); err != nil {
+		toolPath, ok := tools[toolName];
+		if !ok {
+			fmt.Printf("Path for %s not found!", toolName);
+			continue;
+		}
+
+		parsed, err := processor.Parse(raw);
+		if err != nil {
 			panic(err);
 		}
+
+		resolved, err := processor.Resolve(parsed);
+
+		processor.Render(toolPath.TemplatePath, toolPath.OutputPath, resolved);
 	}
 }

@@ -9,12 +9,11 @@ import (
 )
 
 type ToolMap struct {
-	Name 					string
 	TemplatePath	string
 	OutputPath		string
 }
 
-func LoadToolMap(path string, state *state.State) ([]ToolMap, error) {
+func LoadToolMap(path string, state *state.State) (map[string]ToolMap, error) {
 	path = helper.ExpandPath(path, state);
 
 	fileMap, err := os.Open(path);
@@ -23,7 +22,7 @@ func LoadToolMap(path string, state *state.State) ([]ToolMap, error) {
 	}
 	defer fileMap.Close();
 
-	var res []ToolMap;
+	res := make(map[string]ToolMap);
 	scanner := bufio.NewScanner(fileMap);
 
 	for scanner.Scan() {
@@ -33,12 +32,11 @@ func LoadToolMap(path string, state *state.State) ([]ToolMap, error) {
 		if len(parts) != 3 {
 			continue;
 		}
-
-		res = append(res, ToolMap{
-			Name: 			parts[0],
-			TemplatePath: 	parts[1],
-			OutputPath: 	parts[2],
-		});
+		
+		res[parts[0]] = ToolMap{
+			TemplatePath: parts[1],
+			OutputPath: parts[2],
+		}
 	}
 
 	return res, scanner.Err();

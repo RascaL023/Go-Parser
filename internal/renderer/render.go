@@ -4,11 +4,11 @@ import (
 	"os"
 	"text/template"
 )
-
-type Renderer interface {
-	Render(inputPath, outputPath string) error
-}
-
+//
+// type Renderer interface {
+// 	Render(inputPath, outputPath string) error
+// }
+//
 func Render(templatePath, outputPath string, tool any) error {
 	tmpl, err := template.ParseFiles(templatePath);
 	if err != nil {
